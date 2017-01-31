@@ -22,6 +22,11 @@
       <div class="container">
         <h2>API DB MOVIE</h2>
         <div>
+          @foreach($genredata['genres'] as $client)
+          <tr>
+            <td><a href="{{$client['id']}}">{{$client['name']}}</a></td>
+          </tr>
+          @endforeach
           <table class="table table-striped">
             <thead>
               <tr>
@@ -33,7 +38,7 @@
             </thead>
             <tbody>
               @foreach($data['results'] as $clients)
-              <trk>
+              <tr>
                 <td>{{$clients['title']}}||{{$clients['id']}}</td>
                 <td>{{$clients['overview']}}</td>
                 <td><img height="42" width="42" src="http://image.tmdb.org/t/p/w500/{{$clients['poster_path']}}"></td>
