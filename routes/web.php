@@ -23,3 +23,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/film','MovieController@index');
+Route::get('/lihat/{id?}','MovieController@lihat');

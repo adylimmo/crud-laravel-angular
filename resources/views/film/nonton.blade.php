@@ -22,11 +22,6 @@
       <div class="container">
         <h2>API DB MOVIE</h2>
         <div>
-          @foreach($genredata['genres'] as $client)
-          <tr>
-            <td><a href="{{$client['id']}}">{{$client['name']}}</a></td>
-          </tr>
-          @endforeach
           <table class="table table-striped">
             <thead>
               <tr>
@@ -37,14 +32,13 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($data['results'] as $clients)
               <tr>
-                <td>{{$clients['title']}}||{{$clients['id']}}</td>
-                <td>{{$clients['overview']}}</td>
-                <td><a href="{{url('lihat',$clients['id'])}}"><img height="42" width="42" src="http://image.tmdb.org/t/p/w500/{{$clients['poster_path']}}"></a></td>
-                <td>{{$clients['vote_count']}}</td>
+                <td>{{$data['id']}}</td>
+                <td>{{$data['original_title']}}</td>
+                @foreach($videodata['results'] as $vid)
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$vid['key']}}" frameborder="0" allowfullscreen></iframe>
+                @endforeach
               </tr>
-              @endforeach
             </tbody>
           </table>
 
