@@ -22,3 +22,4 @@ Route::delete('/api/supplier/{id?}','SupplierController@destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/film','MovieController@index');
